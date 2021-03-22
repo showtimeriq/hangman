@@ -1,0 +1,18 @@
+<%= image_tag("Stage0.png") %>
+
+<%= @board_layout%>
+
+<%= form_tag("/games/#{@game.id}", :method => "put") do %>
+    <%= text_field(:game, :name, value: " ") %>
+    <%= submit_tag("Guess Letter") %>
+  <% end %>
+
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+
+
+
+
